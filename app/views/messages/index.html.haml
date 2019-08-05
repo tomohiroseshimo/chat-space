@@ -1,0 +1,47 @@
+.flash-box
+  グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__user-name
+        test-user
+      .user-menu
+        .user-menu__edit-user
+          %a(href="")
+            %i.fa.fa-edit
+        .user-menu__new-group
+          %a(href="")
+            %i.fa.fa-cog
+    .groups
+      %a(href="")
+        .group
+          .group__group-name
+            shibainu
+          .group__latest-message
+  .chat-main
+    .main-header
+      .current-group
+        .current-group__name
+          shibainu2
+        .member-list
+          Member
+      .edit-btn
+        %a(href="")
+          Edit 
+    .messages
+      .message
+        .upper-info
+          .upper-info__user
+            test-user
+          .upper-info__date
+            2019/07/27
+        .message__text
+          text
+    .form
+      .new_message
+        .input-box
+          %input(placeholder="type a message" class="input-box__text" type="text" id="message_content" name="message[content]")
+          %label(class="image-label" for="message_image")
+            %i.fa.fa-image
+              %input(class="image-label__input" type="file" name="message[image]" id="message_image")
+        %input(type="submit" name="commit" value="Send" class="new-message__submit-btn" data-disable-with="Send")
