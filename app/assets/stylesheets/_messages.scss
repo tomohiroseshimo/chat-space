@@ -1,0 +1,149 @@
+$font_color_w:#ffffff;
+$background_color_b: #38AEF0;
+$background_color_g: #2f3e51;
+$full: 100%;
+
+.flash-box{
+  color: white;
+  text-align: center;
+  background-color: $background_color_b;
+}
+
+.wrapper{
+  display: flex;
+}
+.chat-side{
+  float: left;
+  width: 300px;
+  background-color: $background_color_g;
+}
+.side-header{
+  height: 100px;
+  padding: 0 20px;
+  background-color: #253141;
+}
+.side-header__user-name{
+  float: left;
+  margin-top: 35px;
+  font-weight: bold;
+  color: $font_color_w;
+  font-size: 16px;
+}
+.user-menu{
+float: right;
+display: flex;
+margin-top: 35px;
+text-align: center;
+color: $font_color_w;
+}
+.groups{
+  height: calc(100vh - 100px);
+  padding: 20px 20px 0;
+  overflow: scroll;
+}
+.group{
+  background-color: $background_color_g;
+  font-weight: bold;
+  color: $font_color_w;
+  font-size: 15px;
+}
+
+.chat-main{
+  float: left;
+  width:calc(100vw - 300px);
+  color: #333333;
+}
+.main-header{
+  height: 100px;
+  padding: 0 40px;
+  border-bottom: solid 1px #eeeeee;
+}
+.current-group{
+  float: left;
+}
+.current-group__name{
+  margin-top: 35px;
+  color: #333333;
+  font-size: 20px;
+}
+.member-list{
+  margin-top: 15px;
+  color: #999999;
+  font-size: 12px;
+}
+.edit-btn{
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  margin-top: 28px;
+  border: solid 1px $background_color_b;
+}
+.messages{
+  padding: 46px 40px;
+  height: calc(100vh - 190px);
+  background-color: #fafafa;
+  overflow: scroll;
+}
+.message{
+  padding-bottom: 40px;
+  &__text{
+    color: #434A54;
+    font-size: 14px;
+  }
+}
+.upper-info{
+  display: flex;
+  margin-bottom: 10px;
+  &__user{
+    color: #434A54;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__date{
+    margin-left: 10px;
+    color: #999999;
+    font-size: 12px;
+  }
+}
+.form{
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #dddddd;
+}
+.new_message{
+  height: 50px;
+  width: $full;
+  display: inline-flex;
+}
+.input-box{
+  display: inline-block;
+  width: $full;
+  position: relative;
+  &__text{
+    box-sizing: border-box;
+    width: $full;
+    height: 50px;
+    padding: 0 0 0 10px;
+  }
+}
+.image-label{
+  display: inline-block;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 5.5px;
+  right: 10px;
+  cursor: pointer;
+  &__input{
+    display: none;
+  }
+}
+.new-message__submit-btn{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  background-color: $background_color_b;
+  padding: 0 30px;
+  margin-left: 15px;
+  cursor: pointer;
+}
