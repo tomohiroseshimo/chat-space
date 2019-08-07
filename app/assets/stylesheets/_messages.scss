@@ -12,24 +12,24 @@ $full: 100%;
 .wrapper{
   display: flex;
 }
-.chat-side{
+.side-bar{
   float: left;
   width: 300px;
   background-color: $background_color_g;
 }
-.side-header{
+.header{
   height: 100px;
   padding: 0 20px;
   background-color: #253141;
 }
-.side-header__user-name{
+.header__name{
   float: left;
   margin-top: 35px;
   font-weight: bold;
   color: $font_color_w;
   font-size: 16px;
 }
-.user-menu{
+.header__lists{
 float: right;
 display: flex;
 margin-top: 35px;
