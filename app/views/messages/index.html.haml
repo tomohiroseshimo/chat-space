@@ -22,10 +22,10 @@
         .message__text
           text
     .form
-      .new_message
-        .input-box
-          %input(placeholder="type a message" class="input-box__text" type="text" id="message_content" name="message[content]")
-          %label(class="image-label" for="message_image")
-            %i.fa.fa-image
-              %input(class="image-label__input" type="file" name="message[image]" id="message_image")
-        %input(type="submit" name="commit" value="Send" class="new-message__submit-btn" data-disable-with="Send")
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
