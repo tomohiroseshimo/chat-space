@@ -116,29 +116,29 @@ color: $font_color_w;
   width: $full;
   display: inline-flex;
 }
-.input-box{
-  display: inline-block;
-  width: $full;
-  position: relative;
-  &__text{
-    box-sizing: border-box;
-    width: $full;
-    height: 50px;
-    padding: 0 0 0 10px;
-  }
+.form__message{
+  box-sizing: border-box;
+      width: $full;
+      height: 50px;
+      padding: 0 0 0 10px;
 }
-.image-label{
+.form__mask{
+  display: inline-block;
+  position: relative;
+}
+.form__mask__image{
   display: inline-block;
   font-size: 1.3rem;
   position: absolute;
   top: 5.5px;
   right: 10px;
   cursor: pointer;
-  &__input{
-    display: none;
-  }
 }
-.new-message__submit-btn{
+.hidden{
+  display: none;
+}
+
+.form__submit{
   display: inline-block;
   width: 100px;
   height: 50px;
