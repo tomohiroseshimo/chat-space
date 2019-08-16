@@ -13,13 +13,13 @@ $(function(){
                   <p class="message__text__content">
                     ${data.content}
                   </p>
+                  <img class="message__text__image" src=${data.image} alt="Test image">
                 </div>
                </div>`
     return html;
   }
 
   $('#new_message').on('submit', function(e){
-    console.log("test")
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
