@@ -31,8 +31,8 @@ $(function(){
       processData: false,
       contentType: false,
     })
-    .done(function(data){
-      var html = buildData(data);
+    .done(function(messagedata){
+      var html = buildData(messagedata);
       $('.messages').append(html);
       $('.new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
@@ -40,7 +40,7 @@ $(function(){
     .fail(function(){
       alert('error');
     })
-    .always(function(data){
+    .always(function(){
       $('.form__submit').prop('disabled', false);
     })
   })
