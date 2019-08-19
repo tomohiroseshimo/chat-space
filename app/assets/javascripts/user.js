@@ -8,21 +8,21 @@ $(function(){
   }
 
 
-  $('#chat-group-form__field--right').on('keyup', function(e){
+  $('.chat-group-form__field--right').on('keyup', function(e){
     e.preventDefault();
-    var input = $.trim($(this).val())
+    var input = $("#user-search-field").val();
     $.ajax({
       url: '/users',
       type: 'GET',
-      data: ('keyword=' + input),
-      processData: false,
-      contentType: false,
+      data: {keyword: input},
       dataType: 'json'
     })
     .done(function(usersdata){
-      var html = builduser(usersdata)
-      $('.chat-group-form__feild--right').append(html);
+      usersdata.forEach(function(userdata){
+      var html = builduser(userdata)
+      $('#user-search-result').append(html);
     })
+  })
     .fail(function(){
       alert('error');
     })
