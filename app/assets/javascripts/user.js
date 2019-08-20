@@ -2,7 +2,7 @@ $(function(){
   function builduser(data){
     var html = `<div class="chat-group-user clearfix">
                  <p class="chat-group-user__name">${data.name}</p>
-                 <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="ユーザーのid" data-user-name="ユーザー名">追加</div>
+                 <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${data.id} data-user-name=${data.name}>追加</div>
                 </div>`
     return html;
   }
@@ -26,7 +26,7 @@ $(function(){
       alert('error');
     })
   });
-   function adduser(user_name,user_id){
+   function adduser(user_name, user_id){
      var html = `<div class='chat-group-user'>
                   <input name='group[user_ids][]' type='hidden' value=${user_id}>
                    <p class='chat-group-user__name'>${user_name}</p>
@@ -35,9 +35,13 @@ $(function(){
      return html;
    }
   $('#user-search-result').on('click', '.chat-group-user__btn--add',function(){
-    var user_name = $(this).data('name');
-    var user_id = $(this).data('id');
-    var html = adduser(user_name, user_id)
-    $('.chat-group-user').append(html)
+    $(this).parent().remove();
+    var user_name = $(this).data('user-name'); 
+    var user_id = $(this).data('user-id');
+    var html = adduser(user_name, user_id);
+    $('#user-group-add').append(html);
+  });
+  $('#user-group-add').on('click', '.chat-group-user__btn--remove',function(){
+    $(this).parent().remove();
   });
 });
