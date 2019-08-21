@@ -6,9 +6,10 @@
     .main-header
       .current-group
         .current-group__name
-          shibainu2
+          = @group.name
         .member-list
-          Member
+          - @group.users.each do |user|
+            = user.name
       .edit-btn
         = link_to "Edit", edit_group_path(@group)
     .messages
