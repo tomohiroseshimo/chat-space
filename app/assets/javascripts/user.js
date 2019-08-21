@@ -39,9 +39,9 @@ $(function(){
     var user_name = $(this).data('user-name'); 
     var user_id = $(this).data('user-id');
     var html = adduser(user_name, user_id);
-    $('#user-group-add').append(html);
+    $('#chat-group-users').append(html);
   });
-  $('#user-group-add').on('click', '.chat-group-user__btn--remove',function(){
+  $('#chat-group-users').on('click', '.chat-group-user__btn--remove',function(){
     $(this).parent().remove();
   });
 });
